@@ -1,17 +1,12 @@
-import { Link, routes } from '@redwoodjs/router'
+import MainLayout from 'src/layouts/MainLayout'
 
 const AboutPage = () => {
   return (
-    <>
-      <h1>AboutPage</h1>
-      <p>
-        Find me in <code>./web/src/pages/AboutPage/AboutPage.js</code>
-      </p>
-      <p>
-        My default route is named <code>about</code>, link to me with `
-        <Link to={routes.about()}>About</Link>`
-      </p>
-    </>
+    <MainLayout>
+      <h2>About</h2>
+      <p>Who are we?</p>
+      <p>Let&apos;s tell a story...</p>
+    </MainLayout>
   )
 }
 
