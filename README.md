@@ -89,18 +89,20 @@ $ yarn rw generate <type>
 $ yarn rw destroy <type>
 ```
 
-| Command | Description |
-| `cell <name>` | Generate a cell component |
-| `component <name>` | Generate a component component |
-| `dataMigration <name>` |	Generate a data migration component |
-| `deploy <provider>` |	Generate a deployment configuration |
-| `function <name>` |	Generate a Function |
-| `layout <name>` |	Generate a layout component |
-| `page <name> [path]` |	Generate a page component |
-| `scaffold <model>` |	Generate Pages, SDL, and Services files based on a given DB schema Model. Also accepts <path/model> |
-| `sdl <model>` |	Generate a GraphQL schema and service object |
-| `service <name>` |	Generate a service component |
-| `util <util>` |	Quality of life utilities |
+ Command | Description
+------------ | -------------
+ `cell <name>` | Generate a cell component
+ `component <name>` | Generate a component component
+ `dataMigration <name>` |	Generate a data migration component
+ `deploy <provider>` |	Generate a deployment configuration
+ `function <name>` |	Generate a Function
+ `layout <name>` |	Generate a layout component
+ `page <name> [path]` |	Generate a page component
+ `scaffold <model>` |	Generate Pages, SDL, and Services files based on a given DB schema Model. Also accepts <path/model>
+ `sdl <model>` |	Generate a GraphQL schema and service object
+ `service <name>` |	Generate a service component
+ `util <util>` |	Quality of life utilities
+
 ### Database commands
 
 See also [Prisma CLI Reference](https://www.prisma.io/docs/reference/api-reference/command-reference)
@@ -152,8 +154,9 @@ $ yarn rw setup deploy <provider>
 
 
 ## Abbreviations
-| Whole word | Abbreviation |
-| `redwood` | `rw` |
-| `generate` | `g`|
- `destroy` | `d` |
-| `console` | `c`|
+ Whole word | Abbreviation
+------------ | -------------
+ `redwood` | `rw`
+ `generate` | `g`
+  `destroy` | `d`
+ `console` | `c`
