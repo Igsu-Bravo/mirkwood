@@ -4,13 +4,13 @@
 
 Install dependencies
 
-```terminal
+```shell
 yarn install
 ```
 
 ## Fire it up
 
-```terminal
+```shell
 yarn rw dev
 ```
 
@@ -32,7 +32,7 @@ Build command example:
 `$ yarn redwood build [web, api]`
 
 ### Redwood general commands
-```terminal
+```shell
 # Upgrade Redwood core (interactive)
 $ yarn rw upgrade
 
@@ -69,7 +69,7 @@ $ yarn rw info
 
 ### Deploy commands
 
-```terminal
+```shell
 # Deploy to AWS using selected provider
 $ yarn rw deploy aws [provider] --side
 
@@ -81,7 +81,7 @@ $ yarn rw deploy vercel
 ```
 
 ### Generate commands
-```terminal
+```shell
 # Base command
 $ yarn rw generate <type>
 
@@ -107,7 +107,7 @@ $ yarn rw destroy <type>
 
 See also [Prisma CLI Reference](https://www.prisma.io/docs/reference/api-reference/command-reference)
 
-```terminal
+```shell
 # Generate Prisma client
 $ yarn rw db up
 
@@ -131,7 +131,7 @@ $ yarn rw prisma migrate deploy
 ```
 
 Data migration tools
-```terminal
+```shell
 # Appends DataMigration model to schema.prisma, creates api/db/dataMigrations directory
 $ yarn rw dataMigrate install
 
@@ -141,7 +141,7 @@ $ yarn rw dataMigrate uo
 
 ### Setup configs and install packages
 
-```terminal
+```shell
 # Setup auth configuration, use -f option to overwrite existing files
 $ yarn rw setup auth <provider>
 
