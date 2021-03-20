@@ -10,13 +10,14 @@ export const schema = gql`
     employee: Employee
   }
 
-  type Employee {
+  """
+   type Employee {
     id: String!
     userId: String!
     companyId: String!
     officeId: String!
   }
-
+  """
   type Query {
     users: [User!]!
     user(id: String!): User
