@@ -136,7 +136,7 @@ Data migration tools
 $ yarn rw dataMigrate install
 
 # Executes outstanding data migrations
-$ yarn rw dataMigrate uo
+$ yarn rw dataMigrate up
 ```
 
 ### Setup configs and install packages
