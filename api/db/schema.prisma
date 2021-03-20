@@ -1,6 +1,7 @@
 datasource DS {
   // optionally set multiple providers
   // example: provider = ["sqlite", "postgresql"]
+  // OBS! Multiple providers are no longer supported as of 0.25
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
