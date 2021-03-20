@@ -11,11 +11,37 @@ generator client {
   binaryTargets = "native"
 }
 
-// Define your own datamodels here and run `yarn redwood db save` to create
-// migrations for them.
-// TODO: Please remove the following example:
-model UserExample {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+// Define your own datamodels here and run `yarn rw prisma migrate dev` to create
+// migrations snapshots for them.
+model User {
+  id          String     @id @default(uuid())
+  email       String     @unique
+  name        String?
+  createdAt   DateTime   @default(now())
+  canSeeMap   Boolean    @default(false)
+  description String?
+  isAdmin     Boolean    @default(false)
+  Employee    Employee[]
+}
+
+model Company {
+  id           String     @id @default(uuid())
+  company_name String
+  Employee     Employee[]
+}
+
+model Office {
+  id          String     @id @default(uuid())
+  office_name String
+  Employee    Employee[]
+}
+
+model Employee {
+  employee_id String  @id @default(uuid())
+  user_id     String
+  company_id  String
+  office_id   String
+  user        User    @relation(fields: [user_id], references: [id])
+  company     Company @relation(fields: [company_id], references: [id])
+  office      Office  @relation(fields: [office_id], references: [id])
 }
