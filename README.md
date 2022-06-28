@@ -1,11 +1,8 @@
-# README
-
-Welcome to [RedwoodJS](https://redwoodjs.com)!
+# Mirkwood
 
 > **Prerequisites**
 >
-> - Redwood requires [Node.js](https://nodejs.org/en/) (>=14.19.x <=16.x) and [Yarn](https://yarnpkg.com/) (>=1.15)
-> - Are you on Windows? For best results, follow our [Windows development setup](https://redwoodjs.com/docs/how-to/windows-development-setup) guide
+> - This app is built using Redwood, which requires [Node.js](https://nodejs.org/en/) (>=14.19.x <=16.x) and [Yarn](https://yarnpkg.com/) (>=1.15)
 
 Start by installing dependencies:
 
@@ -20,9 +17,9 @@ cd my-redwood-project
 yarn redwood dev
 ```
 
-Your browser should automatically open to http://localhost:8910 where you'll see the Welcome Page, which links out to a ton of great resources.
+Your browser should automatically open to http://localhost:8910
 
-> **The Redwood CLI**
+> **Using the Redwood CLI**
 >
 > Congratulations on running your first Redwood CLI command!
 > From dev to deploy, the CLI is with you the whole way.
