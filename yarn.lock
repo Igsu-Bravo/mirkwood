@@ -8379,16 +8379,16 @@ __metadata:
   linkType: hard
 
 "browserslist@npm:^4.0.0, browserslist@npm:^4.12.0, browserslist@npm:^4.14.5, browserslist@npm:^4.16.6, browserslist@npm:^4.20.2, browserslist@npm:^4.20.3, browserslist@npm:^4.21.0":
-  version: 4.21.0
-  resolution: "browserslist@npm:4.21.0"
+  version: 4.21.1
+  resolution: "browserslist@npm:4.21.1"
   dependencies:
-    caniuse-lite: ^1.0.30001358
-    electron-to-chromium: ^1.4.164
+    caniuse-lite: ^1.0.30001359
+    electron-to-chromium: ^1.4.172
     node-releases: ^2.0.5
-    update-browserslist-db: ^1.0.0
+    update-browserslist-db: ^1.0.4
   bin:
     browserslist: cli.js
-  checksum: c7f3dc24579ea2bd346280c7b6efd159391df894cde1e298b583dff876c53f25f39102772e964b0ff4fac4dad10c4dee569a8491e7251dfb0de110b0fb3f9760
+  checksum: 39e152e19f2641d8f2ad14c49bd84f1af9f8c830ec396ddd4d4a8a3419adeb1d418d9974e0694215b05cfdb49c3250336a3c130898789021afcaf154104de90b
   languageName: node
   linkType: hard
 
@@ -8693,7 +8693,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001358":
+"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001359":
   version: 1.0.30001359
   resolution: "caniuse-lite@npm:1.0.30001359"
   checksum: 75c1655650155ecc859a3ea69e3496ebadc3c9e167046ddf572d4d28ea466ce714e2205fc417594e2047721a585b3156b7f9a3fe98f2612a1de406519fad6daa
@@ -10903,7 +10903,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-to-chromium@npm:^1.4.164":
+"electron-to-chromium@npm:^1.4.172":
   version: 1.4.172
   resolution: "electron-to-chromium@npm:1.4.172"
   checksum: b0543ef0331708ccfb049f71be39edd340d9d4e8e0f7cafec9c7e3e8a7982c88d36bbc143b2e29858e42d5bccafbe394b6f389c95c23ed9f8c499e59b93ce623
@@ -23431,7 +23431,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"update-browserslist-db@npm:^1.0.0":
+"update-browserslist-db@npm:^1.0.4":
   version: 1.0.4
   resolution: "update-browserslist-db@npm:1.0.4"
   dependencies:
