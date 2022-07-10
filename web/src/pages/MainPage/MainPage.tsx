@@ -6,14 +6,8 @@ const MainPage = () => {
     <>
       <MetaTags title="Main" description="Main page" />
 
-      <h1>MainPage</h1>
-      <p>
-        Find me in <code>./web/src/pages/MainPage/MainPage.tsx</code>
-      </p>
-      <p>
-        My default route is named <code>main</code>, link to me with `
-        <Link to={routes.main()}>Main</Link>`
-      </p>
+      <h2>See map locations</h2>
+      <p>Map locations should be displayed here</p>
     </>
   )
 }
