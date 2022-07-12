@@ -1,12 +1,14 @@
 import { MetaTags } from '@redwoodjs/web'
 
+import GMap from 'src/components/GMap/GMap'
+
 const MainPage = () => {
   return (
     <>
       <MetaTags title="Main" description="Main page" />
 
-      <h2>See map locations</h2>
-      <p>Map locations should be displayed here</p>
+      <h2>See locations on the map</h2>
+      <GMap />
     </>
   )
 }

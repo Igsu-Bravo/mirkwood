@@ -41,3 +41,7 @@ input.error, textarea.error {
 .form-error li {
   display: list-item
 }
+ #map {
+  width: 50vw;
+  height: 50vh;
+ }
