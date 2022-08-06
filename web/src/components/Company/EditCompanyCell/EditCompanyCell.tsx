@@ -35,15 +35,18 @@ export const Failure = ({ error }: CellFailureProps) => (
 )
 
 export const Success = ({ company }: CellSuccessProps<EditCompanyById>) => {
-  const [updateCompany, { loading, error }] = useMutation(UPDATE_COMPANY_MUTATION, {
-    onCompleted: () => {
-      toast.success('Company updated')
-      navigate(routes.companies())
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-  })
+  const [updateCompany, { loading, error }] = useMutation(
+    UPDATE_COMPANY_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('Company updated')
+        navigate(routes.companies())
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    }
+  )
 
   const onSave = (input, id) => {
     updateCompany({ variables: { id, input } })
@@ -52,10 +55,17 @@ export const Success = ({ company }: CellSuccessProps<EditCompanyById>) => {
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">Edit Company {company.id}</h2>
+        <h2 className="rw-heading rw-heading-secondary">
+          Edit Company {company.id}
+        </h2>
       </header>
       <div className="rw-segment-main">
-        <CompanyForm company={company} onSave={onSave} error={error} loading={loading} />
+        <CompanyForm
+          company={company}
+          onSave={onSave}
+          error={error}
+          loading={loading}
+        />
       </div>
     </div>
   )

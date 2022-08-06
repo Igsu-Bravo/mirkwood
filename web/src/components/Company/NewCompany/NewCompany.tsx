@@ -13,15 +13,18 @@ const CREATE_COMPANY_MUTATION = gql`
 `
 
 const NewCompany = () => {
-  const [createCompany, { loading, error }] = useMutation(CREATE_COMPANY_MUTATION, {
-    onCompleted: () => {
-      toast.success('Company created')
-      navigate(routes.companies())
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-  })
+  const [createCompany, { loading, error }] = useMutation(
+    CREATE_COMPANY_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('Company created')
+        navigate(routes.companies())
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    }
+  )
 
   const onSave = (input) => {
     createCompany({ variables: { input } })
