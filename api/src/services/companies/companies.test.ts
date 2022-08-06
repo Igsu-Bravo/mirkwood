@@ -28,12 +28,12 @@ describe('companies', () => {
 
   scenario('creates a company', async () => {
     const result = await createCompany({
-      input: { name: 'String', latitude: 7994777, longitude: 9528261 },
+      input: { name: 'String', latitude: 2420230, longitude: 9749143 },
     })
 
     expect(result.name).toEqual('String')
-    expect(result.latitude).toEqual(7994777)
-    expect(result.longitude).toEqual(9528261)
+    expect(result.latitude).toEqual(2420230)
+    expect(result.longitude).toEqual(9749143)
   })
 
   scenario('updates a company', async (scenario: StandardScenario) => {
