@@ -26,4 +26,12 @@ model Company {
   latitude  Int
   longitude Int
   Developer Developer[]
+  Office    Office[]
+}
+
+model Office {
+  id         String   @id @default(uuid())
+  officeName String
+  Company    Company? @relation(fields: [companyId], references: [id])
+  companyId  String?
 }
