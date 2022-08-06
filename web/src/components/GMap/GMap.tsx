@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react'
 
 import { Wrapper, Status } from '@googlemaps/react-wrapper'
 
+import config from 'src/config'
+
 interface props {
   center: google.maps.LatLngLiteral
   zoom: number
@@ -33,7 +35,7 @@ const GMap = () => {
 
   return (
     <div>
-      <Wrapper apiKey={process.env.GOOGLE_MAPS_API_KEY} render={render}>
+      <Wrapper apiKey={config.GOOGLE_MAPS_API_KEY} render={render}>
         <MapComponent center={center} zoom={zoom} />
       </Wrapper>
     </div>
