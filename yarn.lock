@@ -2209,6 +2209,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@googlemaps/js-api-loader@npm:^1.13.2":
+  version: 1.14.3
+  resolution: "@googlemaps/js-api-loader@npm:1.14.3"
+  dependencies:
+    fast-deep-equal: ^3.1.3
+  checksum: 94af2860fd30aa79f564fb1c2dacf4f744007c638f2d61ec95ea3f83357febd853410d83220d4a029a06a73baa94a4ecf764721731815342f4bf653114fe913f
+  languageName: node
+  linkType: hard
+
+"@googlemaps/react-wrapper@npm:^1.1.35":
+  version: 1.1.35
+  resolution: "@googlemaps/react-wrapper@npm:1.1.35"
+  dependencies:
+    "@googlemaps/js-api-loader": ^1.13.2
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 111a21ae7c1675d4249eb0656c351b52b0745271b2a4a4afb969b428fe0859e00ab3487e56b6a69432ed0072b0495ef63a5de3915b3b1e8d676b6d58e0c602bf
+  languageName: node
+  linkType: hard
+
 "@graphql-codegen/cli@npm:2.6.2":
   version: 2.6.2
   resolution: "@graphql-codegen/cli@npm:2.6.2"
@@ -5739,6 +5759,13 @@ __metadata:
     "@types/minimatch": "*"
     "@types/node": "*"
   checksum: a8eb5d5cb5c48fc58c7ca3ff1e1ddf771ee07ca5043da6e4871e6757b4472e2e73b4cfef2644c38983174a4bc728c73f8da02845c28a1212f98cabd293ecae98
+  languageName: node
+  linkType: hard
+
+"@types/google.maps@npm:^3.49.2":
+  version: 3.49.2
+  resolution: "@types/google.maps@npm:3.49.2"
+  checksum: 81525ed61bbe78a80bf234cb086b800011340fa214bef25507c4f8c09e87ea0a0940e8389bd6c87617e9fff2f2aef67857532b7bc48b691400b62e22cbb06e55
   languageName: node
   linkType: hard
 
@@ -23871,9 +23898,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
+    "@googlemaps/react-wrapper": ^1.1.35
     "@redwoodjs/forms": ^2.0.0
     "@redwoodjs/router": ^2.0.0
     "@redwoodjs/web": ^2.0.0
+    "@types/google.maps": ^3.49.2
     prop-types: 15.8.1
     react: 17.0.2
     react-dom: 17.0.2
