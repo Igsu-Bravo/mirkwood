@@ -2229,6 +2229,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@googlemaps/typescript-guards@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@googlemaps/typescript-guards@npm:2.0.1"
+  checksum: b60445935063738fb6a0aed8f5f2a82b5e6580ea91cf8acbc8489fd8b8b1edb664779e9abba4ac56cd530b31e1e070f5165d5a0f1424e1358038e0070c1ab116
+  languageName: node
+  linkType: hard
+
 "@graphql-codegen/cli@npm:2.6.2":
   version: 2.6.2
   resolution: "@graphql-codegen/cli@npm:2.6.2"
@@ -12327,6 +12334,13 @@ __metadata:
   version: 1.2.0
   resolution: "fast-diff@npm:1.2.0"
   checksum: 2fbcb23957fb0bc920832a94ba627b860400f9cce45e1594e931dabf62e858369a58c6c2603e2ecc4f7679580f710b5b5b6e698a355a9a9bfcfd93c06c7c4350
+  languageName: node
+  linkType: hard
+
+"fast-equals@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "fast-equals@npm:4.0.1"
+  checksum: e2481c56ca07c6ab82b175eb1159363f2830186649ce9fb2d9ef551cf10b305e741543b5f77b0bb9377703b84e85954312fc4a8e45a91c54cfae5253bd66b4f3
   languageName: node
   linkType: hard
 
@@ -23899,10 +23913,12 @@ __metadata:
   resolution: "web@workspace:web"
   dependencies:
     "@googlemaps/react-wrapper": ^1.1.35
+    "@googlemaps/typescript-guards": ^2.0.1
     "@redwoodjs/forms": ^2.0.0
     "@redwoodjs/router": ^2.0.0
     "@redwoodjs/web": ^2.0.0
     "@types/google.maps": ^3.49.2
+    fast-equals: ^4.0.1
     prop-types: 15.8.1
     react: 17.0.2
     react-dom: 17.0.2

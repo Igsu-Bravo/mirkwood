@@ -1,26 +1,56 @@
-import { useEffect, useRef } from 'react'
+import {
+  useEffect,
+  useRef,
+  Children,
+  isValidElement,
+  cloneElement,
+  useState,
+  type ReactNode,
+} from 'react'
 
 import { Wrapper, Status } from '@googlemaps/react-wrapper'
 
 import config from 'src/config'
+import { useDeepCompareEffectForMaps } from 'src/hooks'
 
-interface props {
+import GMapMarker from '../GMapMarker/GMapMarker'
+
+interface props extends google.maps.MapOptions {
   center: google.maps.LatLngLiteral
   zoom: number
+  style?: { [key: string]: string }
+  children?: ReactNode
+  onClick?: (e: google.maps.MapMouseEvent) => void
+  onIdle?: (map: google.maps.Map) => void
 }
 
-const MapComponent = ({ center, zoom }: props) => {
-  const ref = useRef()
+const MapComponent = ({ center, zoom, children, ...options }: props) => {
+  const ref = useRef<HTMLDivElement>()
+  const [map, setMap] = useState<google.maps.Map>()
 
   useEffect(() => {
-    // eslint-disable-next-line
-    new window.google.maps.Map(ref.current, {
-      center,
-      zoom,
-    })
-  })
+    if (ref.current && !map) {
+      setMap(
+        new window.google.maps.Map(ref.current, {
+          center,
+          zoom,
+        })
+      )
+    }
+  }, [ref, map, center, zoom])
 
-  return <div ref={ref} id="map" />
+  useDeepCompareEffectForMaps(() => {
+    if (map) map.setOptions(options)
+  }, [map, options])
+
+  return (
+    <>
+      <div ref={ref} id="map" />
+      {Children.map(children, (child) => {
+        if (isValidElement(child)) return cloneElement(child, { map })
+      })}
+    </>
+  )
 }
 
 const render = (status: Status) => {
@@ -31,12 +61,15 @@ const render = (status: Status) => {
 
 const GMap = () => {
   const center = { lat: 61.9241, lng: 25.7482 }
+  const markerPosition = { lat: 61.517701, lng: 23.754263 }
   const zoom = 5
 
   return (
     <div>
       <Wrapper apiKey={config.GOOGLE_MAPS_API_KEY} render={render}>
-        <MapComponent center={center} zoom={zoom} />
+        <MapComponent center={center} zoom={zoom}>
+          <GMapMarker position={markerPosition} />
+        </MapComponent>
       </Wrapper>
     </div>
   )
