@@ -33,7 +33,7 @@ const GMap = () => {
 
   return (
     <div>
-      <Wrapper apiKey="" render={render}>
+      <Wrapper apiKey={process.env.GOOGLE_MAPS_API_KEY} render={render}>
         <MapComponent center={center} zoom={zoom} />
       </Wrapper>
     </div>
