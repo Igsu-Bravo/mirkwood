@@ -7,7 +7,7 @@ export const standard = defineScenario<Prisma.DeveloperCreateArgs>({
         alias: 'String',
         role: 'String',
         company: {
-          create: { name: 'String', latitude: 5448965, longitude: 4215634 },
+          create: { name: 'String', latitude: 2995040, longitude: 5396333 },
         },
       },
     },
@@ -16,7 +16,7 @@ export const standard = defineScenario<Prisma.DeveloperCreateArgs>({
         alias: 'String',
         role: 'String',
         company: {
-          create: { name: 'String', latitude: 125343, longitude: 5632547 },
+          create: { name: 'String', latitude: 6417094, longitude: 2049863 },
         },
       },
     },
