@@ -5,6 +5,7 @@ import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
 import { QUERY } from 'src/components/Company/CompaniesCell'
+import GMap from 'src/components/GMap/GMap'
 
 const DELETE_COMPANY_MUTATION = gql`
   mutation DeleteCompanyMutation($id: String!) {
@@ -123,6 +124,9 @@ const CompaniesList = ({ companies }) => {
           ))}
         </tbody>
       </table>
+      <div>
+        <GMap markers={companies} />
+      </div>
     </div>
   )
 }

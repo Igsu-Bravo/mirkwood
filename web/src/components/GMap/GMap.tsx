@@ -13,7 +13,8 @@ import { Wrapper, Status } from '@googlemaps/react-wrapper'
 import config from 'src/config'
 import { useDeepCompareEffectForMaps } from 'src/hooks'
 
-import GMapMarker from '../GMapMarker/GMapMarker'
+import GMapMarker from 'src/components/GMapMarker/GMapMarker'
+import { MapMarker } from 'types/map'
 
 interface props extends google.maps.MapOptions {
   center: google.maps.LatLngLiteral
@@ -22,6 +23,10 @@ interface props extends google.maps.MapOptions {
   children?: ReactNode
   onClick?: (e: google.maps.MapMouseEvent) => void
   onIdle?: (map: google.maps.Map) => void
+}
+
+interface GMapProps {
+  markers: MapMarker[];
 }
 
 const MapComponent = ({ center, zoom, children, ...options }: props) => {
@@ -59,16 +64,20 @@ const render = (status: Status) => {
   return null
 }
 
-const GMap = () => {
+const GMap = (props: GMapProps) => {
   const center = { lat: 61.9241, lng: 25.7482 }
-  const markerPosition = { lat: 61.517701, lng: 23.754263 }
+  // const markerPosition = { lat: 61.517701, lng: 23.754263 }
   const zoom = 5
+
+  const { markers } = props;
 
   return (
     <div>
       <Wrapper apiKey={config.GOOGLE_MAPS_API_KEY} render={render}>
         <MapComponent center={center} zoom={zoom}>
-          <GMapMarker position={markerPosition} />
+        {markers.map((m, i) => (
+            <GMapMarker key={i} position={{lat: m.latitude, lng: m.longitude}} />
+          ))}
         </MapComponent>
       </Wrapper>
     </div>
