@@ -1,7 +1,7 @@
 import type {
   QueryResolvers,
   MutationResolvers,
-  DeveloperResolvers,
+  DeveloperRelationResolvers,
 } from 'types/graphql'
 
 import { db } from 'src/lib/db'
@@ -42,7 +42,8 @@ export const deleteDeveloper: MutationResolvers['deleteDeveloper'] = ({
   })
 }
 
-export const Developer: DeveloperResolvers = {
-  company: (_obj, { root }) =>
-    db.developer.findUnique({ where: { id: root.id } }).company(),
+export const Developer: DeveloperRelationResolvers = {
+  company: (_obj, { root }) => {
+    return db.developer.findUnique({ where: { id: root?.id } }).company()
+  },
 }

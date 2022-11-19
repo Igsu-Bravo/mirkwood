@@ -1,3 +1,5 @@
+import type { Company } from '@prisma/client'
+
 import {
   companies,
   company,
@@ -8,7 +10,7 @@ import {
 import type { StandardScenario } from './companies.scenarios'
 
 // Generated boilerplate tests do not account for all circumstances
-// and can fail without adjustments, e.g. Float and DateTime types.
+// and can fail without adjustments, e.g. Float.
 //           Please refer to the RedwoodJS Testing Docs:
 //       https://redwoodjs.com/docs/testing#testing-services
 // https://redwoodjs.com/docs/testing#jest-expect-type-considerations
@@ -28,16 +30,20 @@ describe('companies', () => {
 
   scenario('creates a company', async () => {
     const result = await createCompany({
-      input: { name: 'String', latitude: 2420230, longitude: 9749143 },
+      input: {
+        name: 'String',
+        latitude: 4307966.907819505,
+        longitude: 3972543.9755860516,
+      },
     })
 
     expect(result.name).toEqual('String')
-    expect(result.latitude).toEqual(2420230)
-    expect(result.longitude).toEqual(9749143)
+    expect(result.latitude).toEqual(4307966.907819505)
+    expect(result.longitude).toEqual(3972543.9755860516)
   })
 
   scenario('updates a company', async (scenario: StandardScenario) => {
-    const original = await company({ id: scenario.company.one.id })
+    const original = (await company({ id: scenario.company.one.id })) as Company
     const result = await updateCompany({
       id: original.id,
       input: { name: 'String2' },
@@ -47,7 +53,9 @@ describe('companies', () => {
   })
 
   scenario('deletes a company', async (scenario: StandardScenario) => {
-    const original = await deleteCompany({ id: scenario.company.one.id })
+    const original = (await deleteCompany({
+      id: scenario.company.one.id,
+    })) as Company
     const result = await company({ id: original.id })
 
     expect(result).toEqual(null)

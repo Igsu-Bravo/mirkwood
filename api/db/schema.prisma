@@ -30,8 +30,8 @@ model Company {
 }
 
 model Office {
-  id         String   @id @default(uuid())
+  id         String  @id @default(uuid())
   officeName String
-  Company    Company? @relation(fields: [companyId], references: [id])
-  companyId  String?
+  Company    Company @relation(fields: [companyId], references: [id])
+  companyId  String
 }

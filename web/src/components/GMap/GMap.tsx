@@ -66,7 +66,6 @@ const render = (status: Status) => {
 
 const GMap = (props: GMapProps) => {
   const center = { lat: 61.9241, lng: 25.7482 }
-  // const markerPosition = { lat: 61.517701, lng: 23.754263 }
   const zoom = 5
 
   const { markers } = props;
