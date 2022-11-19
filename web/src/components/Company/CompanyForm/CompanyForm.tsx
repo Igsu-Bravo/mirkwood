@@ -12,17 +12,6 @@ import {
 
 const CompanyForm = (props) => {
   const onSubmit = (data) => {
-
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
     props.onSave(data, props?.company?.id)
   }
 
@@ -35,7 +24,7 @@ const CompanyForm = (props) => {
           titleClassName="rw-form-error-title"
           listClassName="rw-form-error-list"
         />
-      
+
         <Label
           name="name"
           className="rw-label"
@@ -43,7 +32,7 @@ const CompanyForm = (props) => {
         >
           Name
         </Label>
-        
+
           <TextField
             name="name"
             defaultValue={props.company?.name}
@@ -51,7 +40,7 @@ const CompanyForm = (props) => {
             errorClassName="rw-input rw-input-error"
             validation={{ required: true }}
           />
-        
+
 
         <FieldError name="name" className="rw-field-error" />
 
@@ -62,7 +51,7 @@ const CompanyForm = (props) => {
         >
           Latitude
         </Label>
-        
+
           <NumberField
             name="latitude"
             defaultValue={props.company?.latitude}
@@ -70,7 +59,7 @@ const CompanyForm = (props) => {
             errorClassName="rw-input rw-input-error"
             validation={{ required: true }}
           />
-        
+
 
         <FieldError name="latitude" className="rw-field-error" />
 
@@ -81,7 +70,7 @@ const CompanyForm = (props) => {
         >
           Longitude
         </Label>
-        
+
           <NumberField
             name="longitude"
             defaultValue={props.company?.longitude}
@@ -89,7 +78,7 @@ const CompanyForm = (props) => {
             errorClassName="rw-input rw-input-error"
             validation={{ required: true }}
           />
-        
+
 
         <FieldError name="longitude" className="rw-field-error" />
 
