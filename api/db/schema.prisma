@@ -23,8 +23,6 @@ model Developer {
 model Company {
   id        String      @id @default(uuid())
   name      String
-  latitude  Float
-  longitude Float
   Developer Developer[]
   Office    Office[]
 }
@@ -34,4 +32,6 @@ model Office {
   officeName String
   Company    Company @relation(fields: [companyId], references: [id])
   companyId  String
+  latitude   Float
+  longitude  Float
 }

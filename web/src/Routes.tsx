@@ -18,6 +18,12 @@ import MainLayout from './layouts/MainLayout/MainLayout'
 const Routes = () => {
   return (
     <Router>
+      <Set wrap={ScaffoldLayout} title="Offices" titleTo="offices" buttonLabel="New Office" buttonTo="newOffice">
+        <Route path="/offices/new" page={OfficeNewOfficePage} name="newOffice" />
+        <Route path="/offices/{id}/edit" page={OfficeEditOfficePage} name="editOffice" />
+        <Route path="/offices/{id}" page={OfficeOfficePage} name="office" />
+        <Route path="/offices" page={OfficeOfficesPage} name="offices" />
+      </Set>
       <Set wrap={CompaniesLayout}>
         <Route path="/companies/new" page={CompanyNewCompanyPage} name="newCompany" />
         <Route path="/companies/{id}/edit" page={CompanyEditCompanyPage} name="editCompany" />
