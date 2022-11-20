@@ -1,4 +1,4 @@
-import type { EditCompanyById } from 'types/graphql'
+import type { EditCompanyById, UpdateCompanyInput } from 'types/graphql'
 
 import { navigate, routes } from '@redwoodjs/router'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
@@ -31,7 +31,7 @@ const UPDATE_COMPANY_MUTATION = gql`
 export const Loading = () => <div>Loading...</div>
 
 export const Failure = ({ error }: CellFailureProps) => (
-  <div className="rw-cell-error">{error.message}</div>
+  <div className="rw-cell-error">{error?.message}</div>
 )
 
 export const Success = ({ company }: CellSuccessProps<EditCompanyById>) => {
@@ -48,24 +48,20 @@ export const Success = ({ company }: CellSuccessProps<EditCompanyById>) => {
     }
   )
 
-  const onSave = (input, id) => {
+  const onSave = (
+    input: UpdateCompanyInput,
+    id: EditCompanyById['company']['id']
+  ) => {
     updateCompany({ variables: { id, input } })
   }
 
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">
-          Edit Company {company.id}
-        </h2>
+        <h2 className="rw-heading rw-heading-secondary">Edit Company {company?.id}</h2>
       </header>
       <div className="rw-segment-main">
-        <CompanyForm
-          company={company}
-          onSave={onSave}
-          error={error}
-          loading={loading}
-        />
+        <CompanyForm company={company} onSave={onSave} error={error} loading={loading} />
       </div>
     </div>
   )

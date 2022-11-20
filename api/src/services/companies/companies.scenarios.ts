@@ -6,15 +6,15 @@ export const standard = defineScenario<Prisma.CompanyCreateArgs>({
     one: {
       data: {
         name: 'String',
-        latitude: 711655.2707966495,
-        longitude: 5175422.326239809,
+        latitude: 2128834.575186438,
+        longitude: 692925.3544417402,
       },
     },
     two: {
       data: {
         name: 'String',
-        latitude: 8604588.360062746,
-        longitude: 132529.36044680476,
+        latitude: 1613895.4386216863,
+        longitude: 707096.8303788416,
       },
     },
   },

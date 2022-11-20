@@ -4,6 +4,8 @@ import { toast } from '@redwoodjs/web/toast'
 
 import CompanyForm from 'src/components/Company/CompanyForm'
 
+import type { CreateCompanyInput } from 'types/graphql'
+
 const CREATE_COMPANY_MUTATION = gql`
   mutation CreateCompanyMutation($input: CreateCompanyInput!) {
     createCompany(input: $input) {
@@ -26,7 +28,7 @@ const NewCompany = () => {
     }
   )
 
-  const onSave = (input) => {
+  const onSave = (input: CreateCompanyInput) => {
     createCompany({ variables: { input } })
   }
 

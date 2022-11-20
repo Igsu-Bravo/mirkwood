@@ -1,23 +1,32 @@
+import type { EditCompanyById, UpdateCompanyInput } from 'types/graphql'
+
 import {
   Form,
   FormError,
   FieldError,
   Label,
   TextField,
-  NumberField,
   Submit,
 } from '@redwoodjs/forms'
+import type { RWGqlError } from '@redwoodjs/forms'
 
+type FormCompany = NonNullable<EditCompanyById['company']>
 
+interface CompanyFormProps {
+  company?: EditCompanyById['company']
+  onSave: (data: UpdateCompanyInput, id?: FormCompany['id']) => void
+  error: RWGqlError
+  loading: boolean
+}
 
-const CompanyForm = (props) => {
-  const onSubmit = (data) => {
+const CompanyForm = (props: CompanyFormProps) => {
+  const onSubmit = (data: FormCompany) => {
     props.onSave(data, props?.company?.id)
   }
 
   return (
     <div className="rw-form-wrapper">
-      <Form onSubmit={onSubmit} error={props.error}>
+      <Form<FormCompany> onSubmit={onSubmit} error={props.error}>
         <FormError
           error={props.error}
           wrapperClassName="rw-form-error-wrapper"
@@ -33,14 +42,13 @@ const CompanyForm = (props) => {
           Name
         </Label>
 
-          <TextField
-            name="name"
-            defaultValue={props.company?.name}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-
+        <TextField
+          name="name"
+          defaultValue={props.company?.name}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="name" className="rw-field-error" />
 
@@ -52,14 +60,13 @@ const CompanyForm = (props) => {
           Latitude
         </Label>
 
-          <NumberField
-            name="latitude"
-            defaultValue={props.company?.latitude}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-
+        <TextField
+          name="latitude"
+          defaultValue={props.company?.latitude}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ valueAsNumber: true, required: true }}
+        />
 
         <FieldError name="latitude" className="rw-field-error" />
 
@@ -71,22 +78,18 @@ const CompanyForm = (props) => {
           Longitude
         </Label>
 
-          <NumberField
-            name="longitude"
-            defaultValue={props.company?.longitude}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-
+        <TextField
+          name="longitude"
+          defaultValue={props.company?.longitude}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ valueAsNumber: true, required: true }}
+        />
 
         <FieldError name="longitude" className="rw-field-error" />
 
         <div className="rw-button-group">
-          <Submit
-            disabled={props.loading}
-            className="rw-button rw-button-blue"
-          >
+          <Submit disabled={props.loading} className="rw-button rw-button-blue">
             Save
           </Submit>
         </div>

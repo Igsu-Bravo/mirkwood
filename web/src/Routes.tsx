@@ -9,6 +9,8 @@
 
 import { Router, Route, Set } from '@redwoodjs/router'
 
+import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
+
 import CompaniesLayout from 'src/layouts/CompaniesLayout'
 
 import MainLayout from './layouts/MainLayout/MainLayout'
