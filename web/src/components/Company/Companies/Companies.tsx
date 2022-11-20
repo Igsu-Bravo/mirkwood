@@ -1,15 +1,11 @@
-import type {
-  DeleteCompanyMutationVariables,
-  FindCompanies,
-} from 'types/graphql'
-
 import { Link, routes } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
 import { QUERY } from 'src/components/Company/CompaniesCell'
-import GMap from 'src/components/GMap/GMap'
 import { truncate } from 'src/lib/formatters'
+
+import type { DeleteCompanyMutationVariables, FindCompanies } from 'types/graphql'
 
 const DELETE_COMPANY_MUTATION = gql`
   mutation DeleteCompanyMutation($id: String!) {
@@ -47,8 +43,6 @@ const CompaniesList = ({ companies }: FindCompanies) => {
           <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Latitude</th>
-            <th>Longitude</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -57,8 +51,6 @@ const CompaniesList = ({ companies }: FindCompanies) => {
             <tr key={company.id}>
               <td>{truncate(company.id)}</td>
               <td>{truncate(company.name)}</td>
-              <td>{truncate(company.latitude)}</td>
-              <td>{truncate(company.longitude)}</td>
               <td>
                 <nav className="rw-table-actions">
                   <Link
@@ -89,7 +81,6 @@ const CompaniesList = ({ companies }: FindCompanies) => {
           ))}
         </tbody>
       </table>
-      <GMap markers={companies} />
     </div>
   )
 }

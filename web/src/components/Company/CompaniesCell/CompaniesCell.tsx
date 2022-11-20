@@ -10,8 +10,6 @@ export const QUERY = gql`
     companies {
       id
       name
-      latitude
-      longitude
     }
   }
 `

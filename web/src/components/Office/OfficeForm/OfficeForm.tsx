@@ -31,6 +31,12 @@ const OfficeForm = (props: OfficeFormProps) => {
     
     
   
+    
+    
+  
+    
+    
+  
     props.onSave(data, props?.office?.id)
   }
 
@@ -81,6 +87,44 @@ const OfficeForm = (props: OfficeFormProps) => {
         
 
         <FieldError name="companyId" className="rw-field-error" />
+
+        <Label
+          name="latitude"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Latitude
+        </Label>
+        
+          <TextField
+            name="latitude"
+            defaultValue={props.office?.latitude}
+            className="rw-input"
+            errorClassName="rw-input rw-input-error"
+            validation={{ valueAsNumber: true, required: true }}
+          />
+        
+
+        <FieldError name="latitude" className="rw-field-error" />
+
+        <Label
+          name="longitude"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Longitude
+        </Label>
+        
+          <TextField
+            name="longitude"
+            defaultValue={props.office?.longitude}
+            className="rw-input"
+            errorClassName="rw-input rw-input-error"
+            validation={{ valueAsNumber: true, required: true }}
+          />
+        
+
+        <FieldError name="longitude" className="rw-field-error" />
 
         <div className="rw-button-group">
           <Submit

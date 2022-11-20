@@ -4,6 +4,8 @@ export const schema = gql`
     officeName: String!
     Company: Company!
     companyId: String!
+    latitude: Float!
+    longitude: Float!
   }
 
   type Query {
@@ -14,11 +16,15 @@ export const schema = gql`
   input CreateOfficeInput {
     officeName: String!
     companyId: String!
+    latitude: Float!
+    longitude: Float!
   }
 
   input UpdateOfficeInput {
     officeName: String
     companyId: String
+    latitude: Float
+    longitude: Float
   }
 
   type Mutation {

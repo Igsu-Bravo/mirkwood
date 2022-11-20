@@ -11,6 +11,8 @@ export const QUERY = gql`
       id
       officeName
       companyId
+      latitude
+      longitude
     }
   }
 `

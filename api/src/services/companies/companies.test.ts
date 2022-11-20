@@ -30,16 +30,10 @@ describe('companies', () => {
 
   scenario('creates a company', async () => {
     const result = await createCompany({
-      input: {
-        name: 'String',
-        latitude: 8073619.009685471,
-        longitude: 3815170.9369351263,
-      },
+      input: { name: 'String' },
     })
 
     expect(result.name).toEqual('String')
-    expect(result.latitude).toEqual(8073619.009685471)
-    expect(result.longitude).toEqual(3815170.9369351263)
   })
 
   scenario('updates a company', async (scenario: StandardScenario) => {

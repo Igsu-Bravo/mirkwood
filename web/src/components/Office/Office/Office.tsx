@@ -55,6 +55,12 @@ const Office = ({ office }: Props) => {
             </tr><tr>
               <th>Company id</th>
               <td>{office.companyId}</td>
+            </tr><tr>
+              <th>Latitude</th>
+              <td>{office.latitude}</td>
+            </tr><tr>
+              <th>Longitude</th>
+              <td>{office.longitude}</td>
             </tr>
           </tbody>
         </table>

@@ -6,25 +6,17 @@ export const standard = defineScenario<Prisma.OfficeCreateArgs>({
     one: {
       data: {
         officeName: 'String',
-        Company: {
-          create: {
-            name: 'String',
-            latitude: 9347903.356892701,
-            longitude: 2432809.6305395896,
-          },
-        },
+        latitude: 9688114.443183757,
+        longitude: 4254814.542936827,
+        Company: { create: { name: 'String' } },
       },
     },
     two: {
       data: {
         officeName: 'String',
-        Company: {
-          create: {
-            name: 'String',
-            latitude: 4556265.1674449835,
-            longitude: 281897.90080062504,
-          },
-        },
+        latitude: 2771261.7872870513,
+        longitude: 1052816.3396585044,
+        Company: { create: { name: 'String' } },
       },
     },
   },

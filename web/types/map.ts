@@ -1,10 +1,9 @@
 interface MapMarker {
   latitude: number
   longitude: number
-  name: string
+  officeName: string
+  companyId: string
   id: string
 }
 
-export {
-  MapMarker
-}
+export { MapMarker }

@@ -9,8 +9,6 @@ export const QUERY = gql`
     company: company(id: $id) {
       id
       name
-      latitude
-      longitude
     }
   }
 `

@@ -12,8 +12,6 @@ export const QUERY = gql`
     company: company(id: $id) {
       id
       name
-      latitude
-      longitude
     }
   }
 `
@@ -22,8 +20,6 @@ const UPDATE_COMPANY_MUTATION = gql`
     updateCompany(id: $id, input: $input) {
       id
       name
-      latitude
-      longitude
     }
   }
 `

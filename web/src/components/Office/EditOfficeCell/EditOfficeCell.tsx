@@ -13,6 +13,8 @@ export const QUERY = gql`
       id
       officeName
       companyId
+      latitude
+      longitude
     }
   }
 `
@@ -22,6 +24,8 @@ const UPDATE_OFFICE_MUTATION = gql`
       id
       officeName
       companyId
+      latitude
+      longitude
     }
   }
 `

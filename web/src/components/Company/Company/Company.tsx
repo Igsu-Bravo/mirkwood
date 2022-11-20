@@ -52,12 +52,6 @@ const Company = ({ company }: Props) => {
             </tr><tr>
               <th>Name</th>
               <td>{company.name}</td>
-            </tr><tr>
-              <th>Latitude</th>
-              <td>{company.latitude}</td>
-            </tr><tr>
-              <th>Longitude</th>
-              <td>{company.longitude}</td>
             </tr>
           </tbody>
         </table>

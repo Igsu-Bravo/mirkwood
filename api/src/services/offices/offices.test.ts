@@ -30,11 +30,18 @@ describe('offices', () => {
 
   scenario('creates a office', async (scenario: StandardScenario) => {
     const result = await createOffice({
-      input: { officeName: 'String', companyId: scenario.office.two.companyId },
+      input: {
+        officeName: 'String',
+        companyId: scenario.office.two.companyId,
+        latitude: 3616895.1383884693,
+        longitude: 5427001.310099968,
+      },
     })
 
     expect(result.officeName).toEqual('String')
     expect(result.companyId).toEqual(scenario.office.two.companyId)
+    expect(result.latitude).toEqual(3616895.1383884693)
+    expect(result.longitude).toEqual(5427001.310099968)
   })
 
   scenario('updates a office', async (scenario: StandardScenario) => {
