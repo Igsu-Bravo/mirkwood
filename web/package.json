@@ -15,9 +15,9 @@
   "dependencies": {
     "@googlemaps/react-wrapper": "^1.1.35",
     "@googlemaps/typescript-guards": "^2.0.1",
-    "@redwoodjs/forms": "^3.4.0",
-    "@redwoodjs/router": "^3.4.0",
-    "@redwoodjs/web": "^3.4.0",
+    "@redwoodjs/forms": "^3.8.0",
+    "@redwoodjs/router": "^3.8.0",
+    "@redwoodjs/web": "^3.8.0",
     "fast-equals": "^4.0.1",
     "prop-types": "15.8.1",
     "react": "17.0.2",
