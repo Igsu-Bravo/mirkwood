@@ -8,11 +8,7 @@
     ]
   },
   "devDependencies": {
-<<<<<<< HEAD
     "@redwoodjs/core": "^3.8.0"
-=======
-    "@redwoodjs/core": "^3.5.0"
->>>>>>> 91d0290 (Bump RW version)
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
