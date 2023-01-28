@@ -1,3 +1,5 @@
+import type { EditCompanyById, UpdateCompanyInput } from 'types/graphql'
+
 import {
   Form,
   FormError,
@@ -6,12 +8,7 @@ import {
   TextField,
   Submit,
 } from '@redwoodjs/forms'
-
-import type { EditCompanyById, UpdateCompanyInput } from 'types/graphql'
 import type { RWGqlError } from '@redwoodjs/forms'
-
-
-
 
 type FormCompany = NonNullable<EditCompanyById['company']>
 
@@ -24,10 +21,6 @@ interface CompanyFormProps {
 
 const CompanyForm = (props: CompanyFormProps) => {
   const onSubmit = (data: FormCompany) => {
-  
-    
-    
-  
     props.onSave(data, props?.company?.id)
   }
 
@@ -40,7 +33,7 @@ const CompanyForm = (props: CompanyFormProps) => {
           titleClassName="rw-form-error-title"
           listClassName="rw-form-error-list"
         />
-      
+
         <Label
           name="name"
           className="rw-label"
@@ -48,23 +41,19 @@ const CompanyForm = (props: CompanyFormProps) => {
         >
           Name
         </Label>
-        
-          <TextField
-            name="name"
-            defaultValue={props.company?.name}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="name"
+          defaultValue={props.company?.name}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="name" className="rw-field-error" />
 
         <div className="rw-button-group">
-          <Submit
-            disabled={props.loading}
-            className="rw-button rw-button-blue"
-          >
+          <Submit disabled={props.loading} className="rw-button rw-button-blue">
             Save
           </Submit>
         </div>
