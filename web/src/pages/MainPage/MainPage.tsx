@@ -1,7 +1,5 @@
 import { MetaTags } from '@redwoodjs/web'
 
-import GMap from 'src/components/GMap/GMap'
-
 const MainPage = () => {
   return (
     <>
