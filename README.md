@@ -1,5 +1,7 @@
 # Mirkwood
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d401c67f-3008-41c9-8e48-6abfa9d3a6a9/deploy-status)](https://app.netlify.com/sites/igsu-mirkwood/deploys)
+
 > **Prerequisites**
 >
 > - This app is built using Redwood, which requires [Node.js](https://nodejs.org/en/) (>=14.19.x <=16.x) and [Yarn](https://yarnpkg.com/) (>=1.15)
