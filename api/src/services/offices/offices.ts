@@ -1,7 +1,7 @@
 import type {
   QueryResolvers,
   MutationResolvers,
-  OfficeResolvers,
+  OfficeRelationResolvers,
 } from 'types/graphql'
 
 import { db } from 'src/lib/db'
@@ -38,7 +38,8 @@ export const deleteOffice: MutationResolvers['deleteOffice'] = ({ id }) => {
   })
 }
 
-export const Office: OfficeResolvers = {
-  Company: (_obj, { root }) =>
-    db.office.findUnique({ where: { id: root.id } }).Company(),
+export const Office: OfficeRelationResolvers = {
+  Company: (_obj, { root }) => {
+    return db.office.findUnique({ where: { id: root?.id } }).Company()
+  },
 }

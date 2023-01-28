@@ -16,6 +16,9 @@ const MainLayout = ({ children }: MainLayoutProps) => {
             <li>
               <Link to={routes.about()}>What is this?</Link>
             </li>
+            <li>
+              <Link to={routes.locations()}>Locations</Link>
+            </li>
           </ul>
         </nav>
       </header>

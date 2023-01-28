@@ -10,8 +10,6 @@ export const QUERY = gql`
     companies {
       id
       name
-      latitude
-      longitude
     }
   }
 `
@@ -33,7 +31,7 @@ export const Empty = () => {
 }
 
 export const Failure = ({ error }: CellFailureProps) => (
-  <div className="rw-cell-error">{error.message}</div>
+  <div className="rw-cell-error">{error?.message}</div>
 )
 
 export const Success = ({ companies }: CellSuccessProps<FindCompanies>) => {

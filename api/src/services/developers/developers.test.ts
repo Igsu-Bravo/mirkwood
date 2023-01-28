@@ -1,3 +1,5 @@
+import type { Developer } from '@prisma/client'
+
 import {
   developers,
   developer,
@@ -8,7 +10,7 @@ import {
 import type { StandardScenario } from './developers.scenarios'
 
 // Generated boilerplate tests do not account for all circumstances
-// and can fail without adjustments, e.g. Float and DateTime types.
+// and can fail without adjustments, e.g. Float.
 //           Please refer to the RedwoodJS Testing Docs:
 //       https://redwoodjs.com/docs/testing#testing-services
 // https://redwoodjs.com/docs/testing#jest-expect-type-considerations
@@ -41,7 +43,9 @@ describe('developers', () => {
   })
 
   scenario('updates a developer', async (scenario: StandardScenario) => {
-    const original = await developer({ id: scenario.developer.one.id })
+    const original = (await developer({
+      id: scenario.developer.one.id,
+    })) as Developer
     const result = await updateDeveloper({
       id: original.id,
       input: { alias: 'String2' },
@@ -51,7 +55,9 @@ describe('developers', () => {
   })
 
   scenario('deletes a developer', async (scenario: StandardScenario) => {
-    const original = await deleteDeveloper({ id: scenario.developer.one.id })
+    const original = (await deleteDeveloper({
+      id: scenario.developer.one.id,
+    })) as Developer
     const result = await developer({ id: original.id })
 
     expect(result).toEqual(null)
