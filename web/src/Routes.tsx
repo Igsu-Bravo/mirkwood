@@ -18,16 +18,16 @@ const Routes = () => {
   return (
     <Router>
       <Set wrap={ScaffoldLayout} title="Offices" titleTo="offices" buttonLabel="New Office" buttonTo="newOffice">
-        <Route path="/offices/new" page={OfficeNewOfficePage} name="newOffice" />
-        <Route path="/offices/{id}/edit" page={OfficeEditOfficePage} name="editOffice" />
-        <Route path="/offices/{id}" page={OfficeOfficePage} name="office" />
-        <Route path="/offices" page={OfficeOfficesPage} name="offices" />
+        <Route path="/admin/offices/new" page={OfficeNewOfficePage} name="newOffice" />
+        <Route path="/admin/offices/{id}/edit" page={OfficeEditOfficePage} name="editOffice" />
+        <Route path="/admin/offices/{id}" page={OfficeOfficePage} name="office" />
+        <Route path="/admin/offices" page={OfficeOfficesPage} name="offices" />
       </Set>
       <Set wrap={CompaniesLayout}>
-        <Route path="/companies/new" page={CompanyNewCompanyPage} name="newCompany" />
-        <Route path="/companies/{id}/edit" page={CompanyEditCompanyPage} name="editCompany" />
-        <Route path="/companies/{id}" page={CompanyCompanyPage} name="company" />
-        <Route path="/companies" page={CompanyCompaniesPage} name="companies" />
+        <Route path="/admin/companies/new" page={CompanyNewCompanyPage} name="newCompany" />
+        <Route path="/admin/companies/{id}/edit" page={CompanyEditCompanyPage} name="editCompany" />
+        <Route path="/admin/companies/{id}" page={CompanyCompanyPage} name="company" />
+        <Route path="/admin/companies" page={CompanyCompaniesPage} name="companies" />
       </Set>
       <Set wrap={MainLayout}>
         <Route path="/" page={MainPage} name="main" />
